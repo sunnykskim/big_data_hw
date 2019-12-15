@@ -1,0 +1,537 @@
+{
+  "paragraphs": [
+    {
+      "title": "",
+      "text": "%pyspark\nfrom pyspark import SparkFiles\n# Load in user_data.csv from S3 into a DataFrame\nurl \u003d \"https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Automotive_v1_00.tsv.gz\"\nspark.sparkContext.addFile(url)\n\ndf \u003d spark.read.option(\u0027header\u0027, \u0027true\u0027).csv(SparkFiles.get(\"amazon_reviews_us_Automotive_v1_00.tsv.gz\"), inferSchema\u003dTrue, sep\u003d\u0027\\t\u0027)\ndf.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 15:30:38.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|        review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\n|         US|   36075342| RAB23OVFNCXZQ|B00LPRXQ4Y|     339193102|17\" 2003-2006 For...|      Automotive|          1|            0|          0|   N|                Y|     As it was used,|As it was used, t...|2015-08-31 00:00:00|\n|         US|   42462164|R3NORADVJO6IE6|B000C7S0TO|     907684644|Spectra Premium C...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|Put it in fine, n...|2015-08-31 00:00:00|\n|         US|   21241933|R299F4SO98S5OO|B000CO9WE4|     752246352|K\u0026N E-4665 High P...|      Automotive|          5|            1|          1|   N|                Y|Great fit and per...|Fit wonderfully o...|2015-08-31 00:00:00|\n|         US|   52570308|R2DA9DOT03UW6I|B000GKD5NI|     105401756|Suncutters Rear W...|      Automotive|          5|            2|          3|   N|                Y|Good for the pric...|Good for the pric...|2015-08-31 00:00:00|\n|         US|   38200102|R2OGCH681EQHU6|B009SDA7TE|     728471129|Lug Nuts Landcrui...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|Fit perfectly on ...|2015-08-31 00:00:00|\n|         US|   34866169| R2JMKIC16MHD7|B00KV15KRG|     962286893|Fits 2007-2009 Ho...|      Automotive|          5|            2|          2|   N|                Y|Fit Well and Bett...|Product fits well...|2015-08-31 00:00:00|\n|         US|     184627|R1DB5DA7CWWTI8|B0002JMAKW|     267002949|Castrol 12614 Dot...|      Automotive|          5|            0|          0|   N|                Y|convenient, fast ...|convenient ,fast ...|2015-08-31 00:00:00|\n|         US|    2975964|R1N8XWFDK4QACP|B00XJKMM6S|     570789093|New Power Window ...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|             is good|2015-08-31 00:00:00|\n|         US|   40946484|R19VFLX6MRU0CX|B000C5CEKC|     389524802|Motorad MGC-791 L...|      Automotive|          5|            0|          0|   N|                Y|GOOD deal.  Great...|wonderful.  if yo...|2015-08-31 00:00:00|\n|         US|   12554469| RLTD8YDGTP9PT|B00GD9R2A8|      21425394|Genuine Ford AL3Z...|      Automotive|          1|            0|          0|   N|                Y|Does not fit my F...|Does not work wit...|2015-08-31 00:00:00|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-103325_1428013807",
+      "dateCreated": "2019-12-14 10:33:25.000",
+      "dateStarted": "2019-12-14 15:28:57.648",
+      "dateFinished": "2019-12-14 15:30:38.604",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "Row Count Below:",
+      "user": "",
+      "dateUpdated": "2019-12-14 15:46:10.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark",
+          "profile": "spark",
+          "isCustom": false,
+          "editorLanguage": "scala",
+          "className": "org.apache.zeppelin.spark.SparkInterpreter",
+          "isDefault": true
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-154534_1305634921",
+      "dateCreated": "2019-12-14 15:45:34.000",
+      "dateStarted": "2019-12-15 15:16:29.000",
+      "dateFinished": "2019-12-15 15:16:29.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\ndf.cache()\ndf.count()",
+      "user": "",
+      "dateUpdated": "2019-12-14 11:54:27.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "3514942",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-114558_1604506524",
+      "dateCreated": "2019-12-14 11:45:58.000",
+      "dateStarted": "2019-12-14 11:53:18.688",
+      "dateFinished": "2019-12-14 11:54:27.363",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Drop null values\ndropna_df \u003d df.dropna()\ndropna_df.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 15:33:34.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|        review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\n|         US|   36075342| RAB23OVFNCXZQ|B00LPRXQ4Y|     339193102|17\" 2003-2006 For...|      Automotive|          1|            0|          0|   N|                Y|     As it was used,|As it was used, t...|2015-08-31 00:00:00|\n|         US|   42462164|R3NORADVJO6IE6|B000C7S0TO|     907684644|Spectra Premium C...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|Put it in fine, n...|2015-08-31 00:00:00|\n|         US|   21241933|R299F4SO98S5OO|B000CO9WE4|     752246352|K\u0026N E-4665 High P...|      Automotive|          5|            1|          1|   N|                Y|Great fit and per...|Fit wonderfully o...|2015-08-31 00:00:00|\n|         US|   52570308|R2DA9DOT03UW6I|B000GKD5NI|     105401756|Suncutters Rear W...|      Automotive|          5|            2|          3|   N|                Y|Good for the pric...|Good for the pric...|2015-08-31 00:00:00|\n|         US|   38200102|R2OGCH681EQHU6|B009SDA7TE|     728471129|Lug Nuts Landcrui...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|Fit perfectly on ...|2015-08-31 00:00:00|\n|         US|   34866169| R2JMKIC16MHD7|B00KV15KRG|     962286893|Fits 2007-2009 Ho...|      Automotive|          5|            2|          2|   N|                Y|Fit Well and Bett...|Product fits well...|2015-08-31 00:00:00|\n|         US|     184627|R1DB5DA7CWWTI8|B0002JMAKW|     267002949|Castrol 12614 Dot...|      Automotive|          5|            0|          0|   N|                Y|convenient, fast ...|convenient ,fast ...|2015-08-31 00:00:00|\n|         US|    2975964|R1N8XWFDK4QACP|B00XJKMM6S|     570789093|New Power Window ...|      Automotive|          5|            0|          0|   N|                Y|          Five Stars|             is good|2015-08-31 00:00:00|\n|         US|   40946484|R19VFLX6MRU0CX|B000C5CEKC|     389524802|Motorad MGC-791 L...|      Automotive|          5|            0|          0|   N|                Y|GOOD deal.  Great...|wonderful.  if yo...|2015-08-31 00:00:00|\n|         US|   12554469| RLTD8YDGTP9PT|B00GD9R2A8|      21425394|Genuine Ford AL3Z...|      Automotive|          1|            0|          0|   N|                Y|Does not fit my F...|Does not work wit...|2015-08-31 00:00:00|\n+-----------+-----------+--------------+----------+--------------+--------------------+----------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-110254_734732491",
+      "dateCreated": "2019-12-14 11:02:54.000",
+      "dateStarted": "2019-12-14 15:33:34.378",
+      "dateFinished": "2019-12-14 15:33:34.640",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Create user dataframe to match active_user table\nreview_id_df \u003d dropna_df.select([\"review_id\", \"customer_id\", \"product_id\", \"product_parent\", \"review_date\"])\nreview_id_df.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 12:05:40.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+----------+--------------+-------------------+\n|     review_id|customer_id|product_id|product_parent|        review_date|\n+--------------+-----------+----------+--------------+-------------------+\n| RAB23OVFNCXZQ|   36075342|B00LPRXQ4Y|     339193102|2015-08-31 00:00:00|\n|R3NORADVJO6IE6|   42462164|B000C7S0TO|     907684644|2015-08-31 00:00:00|\n|R299F4SO98S5OO|   21241933|B000CO9WE4|     752246352|2015-08-31 00:00:00|\n|R2DA9DOT03UW6I|   52570308|B000GKD5NI|     105401756|2015-08-31 00:00:00|\n|R2OGCH681EQHU6|   38200102|B009SDA7TE|     728471129|2015-08-31 00:00:00|\n| R2JMKIC16MHD7|   34866169|B00KV15KRG|     962286893|2015-08-31 00:00:00|\n|R1DB5DA7CWWTI8|     184627|B0002JMAKW|     267002949|2015-08-31 00:00:00|\n|R1N8XWFDK4QACP|    2975964|B00XJKMM6S|     570789093|2015-08-31 00:00:00|\n|R19VFLX6MRU0CX|   40946484|B000C5CEKC|     389524802|2015-08-31 00:00:00|\n| RLTD8YDGTP9PT|   12554469|B00GD9R2A8|      21425394|2015-08-31 00:00:00|\n+--------------+-----------+----------+--------------+-------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-110614_554129848",
+      "dateCreated": "2019-12-14 11:06:14.000",
+      "dateStarted": "2019-12-14 12:05:39.708",
+      "dateFinished": "2019-12-14 12:05:40.118",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Create user dataframe to match active_user table\nproduct_id \u003d dropna_df.select([\"product_id\", \"product_title\"])\nproduct_id.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 12:05:53.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+--------------------+\n|product_id|       product_title|\n+----------+--------------------+\n|B00LPRXQ4Y|17\" 2003-2006 For...|\n|B000C7S0TO|Spectra Premium C...|\n|B000CO9WE4|K\u0026N E-4665 High P...|\n|B000GKD5NI|Suncutters Rear W...|\n|B009SDA7TE|Lug Nuts Landcrui...|\n|B00KV15KRG|Fits 2007-2009 Ho...|\n|B0002JMAKW|Castrol 12614 Dot...|\n|B00XJKMM6S|New Power Window ...|\n|B000C5CEKC|Motorad MGC-791 L...|\n|B00GD9R2A8|Genuine Ford AL3Z...|\n+----------+--------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-110846_755295421",
+      "dateCreated": "2019-12-14 11:08:46.000",
+      "dateStarted": "2019-12-14 12:05:53.558",
+      "dateFinished": "2019-12-14 12:05:53.969",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n\nfrom pyspark.sql.functions import row_number,lit\nfrom pyspark.sql.window import Window\n\n# Create user dataframe to match active_user table\ncustomer_df \u003d dropna_df.select([\"customer_id\"])\n\nw \u003d Window().orderBy(lit(\u0027A\u0027))\ncustomer_df2 \u003d customer_df.withColumn(\"customer_count\", row_number().over(w))\ncustomer_df2.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 15:45:09.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+--------------+\n|customer_id|customer_count|\n+-----------+--------------+\n|   36075342|             1|\n|   42462164|             2|\n|   21241933|             3|\n|   52570308|             4|\n|   38200102|             5|\n|   34866169|             6|\n|     184627|             7|\n|    2975964|             8|\n|   40946484|             9|\n|   12554469|            10|\n+-----------+--------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-111741_1001922318",
+      "dateCreated": "2019-12-14 11:17:41.000",
+      "dateStarted": "2019-12-14 15:44:16.099",
+      "dateFinished": "2019-12-14 15:44:56.926",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Create user dataframe to match active_user table\nrating_df \u003d dropna_df.select([\"review_id\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"])\nrating_df.show(10)",
+      "user": "",
+      "dateUpdated": "2019-12-14 11:26:30.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+-------------+-----------+----+\n|     review_id|star_rating|helpful_votes|total_votes|vine|\n+--------------+-----------+-------------+-----------+----+\n| RAB23OVFNCXZQ|          1|            0|          0|   N|\n|R3NORADVJO6IE6|          5|            0|          0|   N|\n|R299F4SO98S5OO|          5|            1|          1|   N|\n|R2DA9DOT03UW6I|          5|            2|          3|   N|\n|R2OGCH681EQHU6|          5|            0|          0|   N|\n| R2JMKIC16MHD7|          5|            2|          2|   N|\n|R1DB5DA7CWWTI8|          5|            0|          0|   N|\n|R1N8XWFDK4QACP|          5|            0|          0|   N|\n|R19VFLX6MRU0CX|          5|            0|          0|   N|\n| RLTD8YDGTP9PT|          1|            0|          0|   N|\n+--------------+-----------+-------------+-----------+----+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-111823_381542176",
+      "dateCreated": "2019-12-14 11:18:23.000",
+      "dateStarted": "2019-12-14 11:26:29.899",
+      "dateFinished": "2019-12-14 11:26:30.060",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Configure settings for RDS\nmode \u003d \"append\"\njdbc_url\u003d\"jdbc:postgresql://\u003cendpoint\u003e:5432/amazonreviews\"\nconfig \u003d {\"user\":\"[Enter Your UserID Here]\", \n          \"password\": \"[Enter Your Password Here]\", \n          \"driver\":\"org.postgresql.Driver\"}",
+      "user": "",
+      "dateUpdated": "2019-12-14 18:20:09.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-112617_935063726",
+      "dateCreated": "2019-12-14 11:26:17.000",
+      "dateStarted": "2019-12-14 12:02:11.009",
+      "dateFinished": "2019-12-14 12:02:11.225",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# RDS\n\nreview_id_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027review_id_table\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2019-12-14 12:05:02.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-114033_215320169",
+      "dateCreated": "2019-12-14 11:40:33.000",
+      "dateStarted": "2019-12-14 12:03:06.425",
+      "dateFinished": "2019-12-14 12:03:06.539",
+      "status": "ERROR",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# RDS\n\nproduct_id.write.jdbc(url\u003djdbc_url, table\u003d\u0027product_id\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2019-12-14 12:06:26.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-115521_1524276973",
+      "dateCreated": "2019-12-14 11:55:21.000",
+      "dateStarted": "2019-12-15 15:16:29.000",
+      "dateFinished": "2019-12-15 15:16:29.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# RDS\n\ncustomer_df2.write.jdbc(url\u003djdbc_url, table\u003d\u0027customer_id\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2019-12-15 15:06:14.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-120629_1405962076",
+      "dateCreated": "2019-12-14 12:06:29.000",
+      "dateStarted": "2019-12-15 15:16:29.000",
+      "dateFinished": "2019-12-15 15:16:29.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# RDS\n\nrating_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027rating_table\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2019-12-15 15:06:30.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [],
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20191214-120657_2064040823",
+      "dateCreated": "2019-12-14 12:06:57.000",
+      "dateStarted": "2019-12-15 15:16:29.000",
+      "dateFinished": "2019-12-15 15:16:29.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    }
+  ],
+  "name": "extract",
+  "id": "eeb3ce738eb74aec958d5e8ad1ac1130",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {},
+  "info": {}
+}
